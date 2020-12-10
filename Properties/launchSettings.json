@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "AdventOfCode2020": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\dev\\AdventOfCode2020\\Inputs"
+    }
+  }
+}
