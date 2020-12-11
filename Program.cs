@@ -66,7 +66,8 @@ namespace AdventOfCode2020
         private static Dictionary<int, Day> _days = new Dictionary<int, Day>
         {
             [1] = new Day1(),
-            [2] = new Day2()
+            [2] = new Day2(),
+            [3] = new Day3()
         };
     }
 }
