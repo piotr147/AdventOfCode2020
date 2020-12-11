@@ -1,12 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace AdventOfCode2020.Utilities
 {
     public static class FileHelper
     {
-        public async static Task<List<int>> GetListFromFile(string fileName)
+        public async static Task<List<int>> GetIntListFromFile(string fileName)
         {
             var result = new List<int>();
 
@@ -18,6 +19,13 @@ namespace AdventOfCode2020.Utilities
             }
 
             return result;
+        }
+
+        public async static Task<List<string>> GetStringListFromFile(string fileName)
+        {
+            string[] lines = await File.ReadAllLinesAsync(fileName);
+
+            return lines.ToList();
         }
     }
 }

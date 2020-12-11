@@ -46,7 +46,7 @@ namespace AdventOfCode2020
         {
             try
             {
-                await _days[day].PerformCalculations($"{_inputsPath}/Day1.txt");
+                await _days[day].PerformCalculations($"{_inputsPath}/Day{day}.txt");
             }
             catch (FormatException e)
             {
@@ -65,7 +65,8 @@ namespace AdventOfCode2020
 
         private static Dictionary<int, Day> _days = new Dictionary<int, Day>
         {
-            [1] = new Day1()
+            [1] = new Day1(),
+            [2] = new Day2()
         };
     }
 }

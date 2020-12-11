@@ -11,7 +11,7 @@ namespace AdventOfCode2020.Days
 
         public override async Task PerformCalculations(string inputFile)
         {
-            List<int> listInput = await FileHelper.GetListFromFile(inputFile);
+            List<int> listInput = await FileHelper.GetIntListFromFile(inputFile);
             int[] input = listInput.ToArray();
 
             CalculateAndLogTime(() =>
