@@ -51,7 +51,7 @@ namespace AdventOfCode2020.Days
             return new Command(parts[0], int.Parse(parts[1]));
         }
 
-        private static struct Command
+        private struct Command
         {
             public string instruction;
             public int arg;

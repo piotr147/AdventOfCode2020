@@ -9,7 +9,7 @@ namespace AdventOfCode2020.Days
     public class Day4 : Day
     {
         private const int DESIRED_SUM = 2020;
-        private readonly string[] RequiredFields = { "byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid" };
+        private static readonly string[] RequiredFields = { "byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid" };
 
         public override async Task PerformCalculations(string inputFile)
         {

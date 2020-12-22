@@ -1,9 +1,7 @@
 ﻿using AdventOfCode2020.Utilities;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.Contracts;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 
 namespace AdventOfCode2020.Days
