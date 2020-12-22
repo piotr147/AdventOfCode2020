@@ -33,7 +33,7 @@ namespace AdventOfCode2020.Days
             Console.WriteLine();
         }
 
-        private Command[] PrepareInput(List<string> listInput)
+        private static Command[] PrepareInput(List<string> listInput)
         {
             List<Command> result = new List<Command>();
 
@@ -45,13 +45,13 @@ namespace AdventOfCode2020.Days
             return result.ToArray();
         }
 
-        private Command ReadCommand(string l)
+        private static Command ReadCommand(string l)
         {
             string[] parts = l.Split(' ');
             return new Command(parts[0], int.Parse(parts[1]));
         }
 
-        private struct Command
+        private static struct Command
         {
             public string instruction;
             public int arg;

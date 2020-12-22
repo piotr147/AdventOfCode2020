@@ -41,7 +41,7 @@ namespace AdventOfCode2020.Days
             Console.WriteLine();
         }
 
-        private long CalculateResult1(bool[,] input, Move[] moves)
+        private static long CalculateResult1(bool[,] input, Move[] moves)
         {
             int maxRow = input.GetLength(0);
             int maxCol = input.GetLength(1);
@@ -68,31 +68,7 @@ namespace AdventOfCode2020.Days
             return result;
         }
 
-        private int CalculateResult2(int[] input)
-        {
-            for (int i = 0; i < input.Length; ++i)
-            {
-                int sumToFind = DESIRED_SUM - input[i];
-
-                for (int j = i + 1; j < input.Length; ++j)
-                {
-                    if (input[j] > sumToFind)
-                        continue;
-
-                    int numberToFind = sumToFind - input[j];
-
-                    for (int k = j + 1; k < input.Length; ++k)
-                    {
-                        if (input[k] == numberToFind)
-                            return input[i] * input[j] * input[k];
-                    }
-                }
-            }
-
-            return -1;
-        }
-
-        private bool[,] PrepareInput(List<string> listInput)
+        private static bool[,] PrepareInput(List<string> listInput)
         {
             bool[,] input = new bool[listInput.Count, listInput[0].Length];
 

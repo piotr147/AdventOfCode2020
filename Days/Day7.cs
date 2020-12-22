@@ -34,14 +34,14 @@ namespace AdventOfCode2020.Days
             Console.WriteLine();
         }
 
-        private int CalculateResult2(List<Bag> input, string col)
+        private static int CalculateResult2(List<Bag> input, string col)
         {
             Bag bag = input.Find(b => b.Color == col);
             
             return BagsCount(bag, input) - 1;
         }
 
-        private int CalculateResult(List<Bag> input, string color)
+        private static int CalculateResult(List<Bag> input, string color)
         {
             int bagsContainingColor = 0;
 
@@ -54,7 +54,7 @@ namespace AdventOfCode2020.Days
             return bagsContainingColor;
         }
 
-        private int BagsCount(Bag bag, List<Bag> input)
+        private static int BagsCount(Bag bag, List<Bag> input)
         {
             int bagsInside = 1;
 
@@ -67,7 +67,7 @@ namespace AdventOfCode2020.Days
             return bagsInside;
         }
 
-        private bool BagContains(Bag bag, string color, List<Bag> input)
+        private static bool BagContains(Bag bag, string color, List<Bag> input)
         {
             if (bag.ContainsColor(color))
                 return true;
@@ -88,7 +88,7 @@ namespace AdventOfCode2020.Days
             return false;
         }
 
-        private List<Bag> PrepareInput(List<string> listInput)
+        private static List<Bag> PrepareInput(List<string> listInput)
         {
             List<Bag> result = new List<Bag>();
 
@@ -101,7 +101,7 @@ namespace AdventOfCode2020.Days
             return result;
         }
 
-        private Bag ReadBag(string line)
+        private static Bag ReadBag(string line)
         {
             int bagsWordIndex = line.IndexOf(BAGS_CONTAIN);
             string color = line.Substring(0, bagsWordIndex - 1);
@@ -113,7 +113,7 @@ namespace AdventOfCode2020.Days
             return bag;
         }
 
-        private void AddChildren(Bag bag, string childrenText)
+        private static void AddChildren(Bag bag, string childrenText)
         {
             if (childrenText.Contains(EMPTY_BAG))
                 return;
@@ -127,7 +127,7 @@ namespace AdventOfCode2020.Days
             }
         }
 
-        private (string color, int number) ReadChild(string child)
+        private static (string color, int number) ReadChild(string child)
         {
             child = child.Trim();
             int firstSpaceIndex = child.IndexOf(' ');

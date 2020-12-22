@@ -44,7 +44,7 @@ namespace AdventOfCode2020.Days
             Console.WriteLine();
         }
 
-        private long CalculateResult1(Dictionary<string, string>[] input)
+        private static long CalculateResult1(Dictionary<string, string>[] input)
         {
             int result = 0;
 
@@ -59,7 +59,7 @@ namespace AdventOfCode2020.Days
             return result;
         }
 
-        private long CalculateResult2(Dictionary<string, string>[] input, Dictionary<string, Func<string, bool>> rules)
+        private static long CalculateResult2(Dictionary<string, string>[] input, Dictionary<string, Func<string, bool>> rules)
         {
             int result = 0;
 
@@ -74,7 +74,7 @@ namespace AdventOfCode2020.Days
             return result;
         }
 
-        private bool ValidateWithRules(Dictionary<string, string> dictionary, Dictionary<string, Func<string, bool>> rules)
+        private static bool ValidateWithRules(Dictionary<string, string> dictionary, Dictionary<string, Func<string, bool>> rules)
         {
             foreach (var item in rules)
             {
@@ -85,7 +85,7 @@ namespace AdventOfCode2020.Days
             return true;
         }
 
-        private bool ValidateYear(string s, int min, int max)
+        private static bool ValidateYear(string s, int min, int max)
         {
             if (s.Length != 4 || !int.TryParse(s, out int val))
                 return false;
@@ -93,7 +93,7 @@ namespace AdventOfCode2020.Days
             return val >= min && val <= max;
         }
 
-        private bool ValidateHeight(string s)
+        private static bool ValidateHeight(string s)
         {
             string unit = s.Substring(s.Length - 2);
 
@@ -111,7 +111,7 @@ namespace AdventOfCode2020.Days
             }
         }
 
-        private bool ValidateColor(string s)
+        private static bool ValidateColor(string s)
         {
             string validChars = "0123456789abcdef";
 
@@ -127,7 +127,7 @@ namespace AdventOfCode2020.Days
             return true;
         }
 
-        private bool ValidateEye(string s)
+        private static bool ValidateEye(string s)
         {
             string[] validColors = new string[]
             {
@@ -137,7 +137,7 @@ namespace AdventOfCode2020.Days
             return validColors.Contains(s);
         }
 
-        private bool ValidatePid(string s)
+        private static bool ValidatePid(string s)
         {
             string validChars = "0123456789";
 
@@ -153,7 +153,7 @@ namespace AdventOfCode2020.Days
             return true;
         }
 
-        private bool IsPassportValid(Dictionary<string, string> dictionary)
+        private static bool IsPassportValid(Dictionary<string, string> dictionary)
         {
             for(int i = 0; i < RequiredFields.Length; ++i)
             {
@@ -165,7 +165,7 @@ namespace AdventOfCode2020.Days
             return true;
         }
 
-        private Dictionary<string, string>[] PrepareInput(List<string> listInput)
+        private static Dictionary<string, string>[] PrepareInput(List<string> listInput)
         {
             List<Dictionary<string, string>> input = new List<Dictionary<string, string>>();
             Dictionary<string, string> dict = new Dictionary<string, string>();
@@ -192,7 +192,7 @@ namespace AdventOfCode2020.Days
             return input.ToArray();
         }
 
-        private void AddKeyValuesToDict(Dictionary<string, string> dict, string[] keysValues)
+        private static void AddKeyValuesToDict(Dictionary<string, string> dict, string[] keysValues)
         {
             for (int i = 0; i < keysValues.Length; ++i)
             {

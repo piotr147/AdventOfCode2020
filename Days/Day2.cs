@@ -7,8 +7,6 @@ namespace AdventOfCode2020.Days
 {
     public class Day2 : Day
     {
-        private const int DESIRED_SUM = 2020;
-
         public override async Task PerformCalculations(string inputFile)
         {
             List<string> listInput = await FileHelper.GetStringListFromFile(inputFile);
@@ -31,7 +29,7 @@ namespace AdventOfCode2020.Days
             Console.WriteLine();
         }
 
-        private int CalculateResult(PasswordWithPolicy[] input, Func<PasswordWithPolicy, bool> Correct)
+        private static int CalculateResult(PasswordWithPolicy[] input, Func<PasswordWithPolicy, bool> Correct)
         {
             int corrects = 0;
 
@@ -46,7 +44,7 @@ namespace AdventOfCode2020.Days
             return corrects;
         }
 
-        private bool IsCorrect(PasswordWithPolicy policy)
+        private static bool IsCorrect(PasswordWithPolicy policy)
         {
             int letterOccurences = 0;
 
@@ -64,11 +62,11 @@ namespace AdventOfCode2020.Days
             return letterOccurences >= policy.num1;
         }
 
-        private bool IsCorrect2(PasswordWithPolicy policy) =>
+        private static bool IsCorrect2(PasswordWithPolicy policy) =>
             policy.password[policy.num1 - 1] == policy.letter
                 ^ policy.password[policy.num2 - 1] == policy.letter;
 
-        private PasswordWithPolicy[] PrepareInput(List<string> listInput)
+        private static PasswordWithPolicy[] PrepareInput(List<string> listInput)
         {
             var result = new PasswordWithPolicy[listInput.Count];
 

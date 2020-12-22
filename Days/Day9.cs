@@ -31,7 +31,7 @@ namespace AdventOfCode2020.Days
             Console.WriteLine();
         }
 
-        private long FindEncryptionWeakness(long[] input, long sum)
+        private static long FindEncryptionWeakness(long[] input, long sum)
         {
             long currentSum = 0;
 
@@ -60,7 +60,7 @@ namespace AdventOfCode2020.Days
             return -1;
         }
 
-        private long FindFirstImproperNumber(long[] input, int preamble)
+        private static long FindFirstImproperNumber(long[] input, int preamble)
         {
             List<long> preambleList = new List<long>(input.Take(preamble));
             long numberToCheck = input[preamble++];
@@ -75,7 +75,7 @@ namespace AdventOfCode2020.Days
             return numberToCheck;
         }
 
-        private bool IsNumberValid(List<long> preambleList, long numberToCheck)
+        private static bool IsNumberValid(List<long> preambleList, long numberToCheck)
         {
             
             for(int i = 0; i < preambleList.Count; ++i)
@@ -90,7 +90,7 @@ namespace AdventOfCode2020.Days
             return false;
         }
 
-        private long[] PrepareInput(List<string> listInput) =>
+        private static long[] PrepareInput(List<string> listInput) =>
             listInput.Select(i => long.Parse(i)).ToArray();
     }
 }

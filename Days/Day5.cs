@@ -7,8 +7,6 @@ namespace AdventOfCode2020.Days
 {
     public class Day5 : Day
     {
-        private const int DESIRED_SUM = 2020;
-
         public override async Task PerformCalculations(string inputFile)
         {
             List<string> listInput = await FileHelper.GetStringListFromFile(inputFile);
@@ -31,7 +29,7 @@ namespace AdventOfCode2020.Days
             Console.WriteLine();
         }
 
-        private int CalculateResult1(string[] input)
+        private static int CalculateResult1(string[] input)
         {
             int max = 0;
 
@@ -44,7 +42,7 @@ namespace AdventOfCode2020.Days
             return max;
         }
 
-        private int CalculateResult2(string[] input)
+        private static int CalculateResult2(string[] input)
         {
             bool[] seats = new bool[1024];
             bool frontPassed = false;
@@ -70,7 +68,7 @@ namespace AdventOfCode2020.Days
             return -1;
         }
 
-        private int CalculateSeat(string seat)
+        private static int CalculateSeat(string seat)
         {
             int row = CalculateRow(seat.Substring(0, 7));
             int col = CalculateCol(seat.Substring(7, 3));
@@ -78,14 +76,14 @@ namespace AdventOfCode2020.Days
             return row * 8 + col;
         }
 
-        private int CalculateRow(string r)
+        private static int CalculateRow(string r)
         {
             string bin = r.Replace('F', '0').Replace('B', '1');
 
             return Convert.ToInt32(bin, 2);
         }
 
-        private int CalculateCol(string r)
+        private static int CalculateCol(string r)
         {
             string bin = r.Replace('L', '0').Replace('R', '1');
 

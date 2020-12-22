@@ -30,10 +30,10 @@ namespace AdventOfCode2020.Days
             Console.WriteLine();
         }
 
-        private int CalculateResult(string[][] input, Func<string[], int> calculateSum) =>
+        private static int CalculateResult(string[][] input, Func<string[], int> calculateSum) =>
             input.Sum(i => calculateSum.Invoke(i));
 
-        private int CountSumAnyone(string[] groupAnswers)
+        private static int CountSumAnyone(string[] groupAnswers)
         {
             int groupSum = 0;
             string answers = string.Empty;
@@ -53,7 +53,7 @@ namespace AdventOfCode2020.Days
             return groupSum;
         }
 
-        private int CountSumEveryone(string[] groupAnswers)
+        private static int CountSumEveryone(string[] groupAnswers)
         {
             string answers = "abcdefghijklmnopqrstuvwxyz";
 
@@ -72,7 +72,7 @@ namespace AdventOfCode2020.Days
             return answers.Length;
         }
 
-        private string[][] PrepareInput(List<string> listInput)
+        private static string[][] PrepareInput(List<string> listInput)
         {
             List<List<string>> result = new List<List<string>>();
             List<string> newList = new List<string>();

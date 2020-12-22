@@ -31,7 +31,7 @@ namespace AdventOfCode2020.Days
             Console.WriteLine();
         }
 
-        private int CalculateResult1(int[] input)
+        private static int CalculateResult1(int[] input)
         {
             for (int i = 0; i < input.Length; ++i)
             {
@@ -47,7 +47,7 @@ namespace AdventOfCode2020.Days
             return -1;
         }
 
-        private int CalculateResult2(int[] input)
+        private static int CalculateResult2(int[] input)
         {
             for (int i = 0; i < input.Length; ++i)
             {
