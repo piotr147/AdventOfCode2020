@@ -73,7 +73,8 @@ namespace AdventOfCode2020
             [6] = new Day6(),
             [7] = new Day7(),
             [8] = new Day8(),
-            [9] = new Day9()
+            [9] = new Day9(),
+            [10] = new Day10()
         };
     }
 }
